@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+
+<suite name="TAP Test Automation Suite" parallel="false" verbose="1" thread-count="1">
+    
+    <!-- Suite-level parameters -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="environment" value="QA"/>
+    
+    <!-- Listeners (Optional) -->
+    <listeners>
+        <listener class-name="com.project.utils.ExecutionSummaryListener"/>
+    </listeners>
+    
+    <!-- Test: Smoke Tests -->
+    <test name="Cucumber BDD Tests - Smoke Suite" preserve-order="true">
+        <parameter name="tags" value="@smoke"/>
+        <classes>
+            <class name="com.project.runner.TestRunner"/>
+        </classes>
+    </test>
+    
+    <!-- 
+    Additional test configurations can be added below
+    
+    Example: Regression Suite
+    <test name="Cucumber BDD Tests - Regression Suite">
+        <parameter name="tags" value="@regression"/>
+        <classes>
+            <class name="com.project.runner.TestRunner"/>
+        </classes>
+    </test>
+    
+    Example: Sanity Suite
+    <test name="Cucumber BDD Tests - Sanity Suite">
+        <parameter name="tags" value="@sanity"/>
+        <classes>
+            <class name="com.project.runner.TestRunner"/>
+        </classes>
+    </test>
+    -->
+    
+</suite>

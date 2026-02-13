@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>tap_dap_project</groupId>
+  <artifactId>tap_dap_project</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>tap_dap_project</name>
+  <description>TAP Test Automation Project with Framework Configurability - Task #151911</description>
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    
+    <!-- ========== DEPENDENCY VERSIONS ========== -->
+    <cucumber.version>7.14.0</cucumber.version>
+    <selenium.version>4.15.0</selenium.version>
+    <testng.version>7.8.0</testng.version>
+    <junit.version>4.13.2</junit.version>
+    <webdrivermanager.version>5.6.2</webdrivermanager.version>
+    <extentreports.version>5.1.1</extentreports.version>
+    <log4j.version>1.2.17</log4j.version>
+    <playwright.version>1.40.0</playwright.version>
+    <freemarker.version>2.3.30</freemarker.version>
+  </properties>
+
+  <dependencies>
+    
+    <!-- ========== EXISTING DEPENDENCIES (UPDATED VERSIONS) ========== -->
+    
+    <!-- JUnit 4 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- Cucumber Java -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    
+    <!-- Cucumber JUnit -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- Cucumber Core -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-core</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    
+    <!-- WebDriverManager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${webdrivermanager.version}</version>
+    </dependency>
+    
+    <!-- Selenium Java -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+    
+    <!-- Log4j -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    
+    <!-- Maven Cucumber Reporting -->
+    <dependency>
+      <groupId>net.masterthought</groupId>
+      <artifactId>maven-cucumber-reporting</artifactId>
+      <version>5.7.5</version>
+    </dependency>
+    
+    <!-- Klov Reporter -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>klov-reporter</artifactId>
+      <version>5.1.0</version>
+    </dependency>
+    
+    <!-- ExtentReports (Old Version - Keep for backward compatibility) -->
+    <dependency>
+      <groupId>com.relevantcodes</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>2.41.2</version>
+    </dependency>
+    
+    <!-- ExtentReports (New Version) -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>${extentreports.version}</version>
+    </dependency>
+    
+    <!-- ========== NEW: FRAMEWORK CONFIGURABILITY DEPENDENCIES ========== -->
+    <!-- Task #151911: Environment & Framework Configurability -->
+    
+    <!-- Cucumber TestNG Integration -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    
+    <!-- TestNG -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>${testng.version}</version>
+    </dependency>
+    
+    <!-- ExtentReports Cucumber7 Adapter -->
+    <dependency>
+      <groupId>tech.grasshopper</groupId>
+      <artifactId>extentreports-cucumber7-adapter</artifactId>
+      <version>1.14.0</version>
+    </dependency>
+    
+    <!-- FreeMarker (Required for ExtentReports 5) -->
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>${freemarker.version}</version>
+    </dependency>
+
+    
+    <!-- Apache POI (Excel/File handling) -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>5.2.3</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.2.3</version>
+    </dependency>
+    
+    <!-- Commons IO -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+    
+    <!-- AssertJ (Enhanced Assertions) -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.24.2</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- ========== FUTURE SCOPE: PLAYWRIGHT & VISUAL REGRESSION ========== -->
+    <!-- Uncomment when implementing Visual Regression Testing -->
+    
+    <!-- Playwright for Java -->
+    <!--
+    <dependency>
+      <groupId>com.microsoft.playwright</groupId>
+      <artifactId>playwright</artifactId>
+      <version>${playwright.version}</version>
+    </dependency>
+    -->
+    
+    <!-- Ashot (Screenshot Comparison - Alternative to Playwright) -->
+    <!--
+    <dependency>
+      <groupId>ru.yandex.qatools.ashot</groupId>
+      <artifactId>ashot</artifactId>
+      <version>1.5.4</version>
+    </dependency>
+    -->
+    
+  </dependencies>
+
+  <build>
+    <plugins>
+      
+      <!-- Maven Compiler Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      
+      <!-- Maven Surefire Plugin - For TestNG/JUnit Execution -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <!-- TestNG Suite XML -->
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          
+          <!-- System Properties -->
+          <systemPropertyVariables>
+            <browser>${browser}</browser>
+            <environment>${environment}</environment>
+          </systemPropertyVariables>
+          
+          <!-- Test Failure Handling -->
+          <testFailureIgnore>true</testFailureIgnore>
+          
+          <!-- Parallel Execution -->
+          <parallel>none</parallel>
+          <threadCount>1</threadCount>
+          
+          <!-- Include/Exclude Tests -->
+          <includes>
+            <include>**/TestRunner*.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+      
+      <!-- Maven Cucumber Reporting Plugin -->
+      <plugin>
+        <groupId>net.masterthought</groupId>
+        <artifactId>maven-cucumber-reporting</artifactId>
+        <version>5.7.5</version>
+        <executions>
+          <execution>
+            <id>execution</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <projectName>TAP Automation Project</projectName>
+              <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+              <inputDirectory>${project.build.directory}</inputDirectory>
+              <jsonFiles>
+                <param>**/*.json</param>
+              </jsonFiles>
+              <checkBuildResult>false</checkBuildResult>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- Maven Clean Plugin -->
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.2.0</version>
+      </plugin>
+      
+      <!-- Maven Resources Plugin -->
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.0</version>
+      </plugin>
+      
+      <!-- Maven JAR Plugin -->
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+      </plugin>
+      
+      <!-- Maven Install Plugin -->
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>3.1.0</version>
+      </plugin>
+      
+      <!-- Maven Deploy Plugin -->
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.0.0</version>
+      </plugin>
+      
+      <!-- Maven Site Plugin -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.12.1</version>
+      </plugin>
+      
+      <!-- Maven Project Info Reports Plugin -->
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.4.1</version>
+      </plugin>
+      
+    </plugins>
+  </build>
+  
+  <!-- ========== PROFILES FOR DIFFERENT FRAMEWORKS ========== -->
+  <profiles>
+    
+    <!-- Profile: TestNG Execution (Default) -->
+    <profile>
+      <id>testng</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <suiteXmlFiles>
+                <suiteXmlFile>testng.xml</suiteXmlFile>
+              </suiteXmlFiles>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+    <!-- Profile: JUnit Execution -->
+    <profile>
+      <id>junit</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>**/TestRunnerJUnit.java</include>
+              </includes>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+    <!-- Profile: Smoke Tests -->
+    <profile>
+      <id>smoke</id>
+      <properties>
+        <cucumber.filter.tags>@smoke</cucumber.filter.tags>
+      </properties>
+    </profile>
+    
+    <!-- Profile: Regression Tests -->
+    <profile>
+      <id>regression</id>
+      <properties>
+        <cucumber.filter.tags>@regression</cucumber.filter.tags>
+      </properties>
+    </profile>
+    
+    <!-- Profile: Future - Playwright -->
+    <profile>
+      <id>playwright</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.microsoft.playwright</groupId>
+          <artifactId>playwright</artifactId>
+          <version>${playwright.version}</version>
+        </dependency>
+      </dependencies>
+    </profile>
+    
+  </profiles>
+  
+</project>

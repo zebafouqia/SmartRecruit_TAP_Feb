@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <theme>STANDARD</theme>
+  <encoding>UTF-8</encoding>
+  <protocol>HTTPS</protocol>
+  <timelineEnabled>true</timelineEnabled>
+  <offlineMode>true</offlineMode>
+  <thumbnailForSelection>true</thumbnailForSelection>
+  <documentTitle>TAP Automation Execution Report</documentTitle>
+  <reportName>Scenario Execution Summary</reportName>
+  <timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
+  <js>
+    document.querySelector('.category-list').style.display = 'none';
+  </js>
+  <css>
+    .sysenv-container { right: 50px; }
+    .brand-logo { background-image: url('https://cdn.pixabay.com/photo/2017/01/31/23/42/animal-2028258_1280.png'); background-size: contain; background-repeat: no-repeat; }
+  </css>
+</configuration>
